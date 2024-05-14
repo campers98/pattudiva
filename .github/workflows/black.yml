@@ -1,24 +1,27 @@
-name: Black
-
-on: push
+on: [push]
 
 jobs:
-  black:
+  example:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Example
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - name: Install black
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -U black
-      - name: Run black
-        run: black .
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Publish to Cloudflare Pages
+        uses: ./
         with:
-            commit_message: "Auto fixes"
-            commit_options: "--no-verify"
-            repository: .
-            commit_user_name: campers98
-            commit_user_email: SVDtelegram1996@users.noreply.github.com
-            commit_author: campers98 <SVDtelegram1996@users.noreply.github.com>
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 8d9a27787944c145290362fe9feba361
+          projectName: campers98
+          directory: pattudiva
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        id: publish
+      - name: Outputs
+        run: |
+          echo "ID: ${{ steps.publish.outputs.id }}"
+          echo "URL: ${{ steps.publish.outputs.url }}"
+          echo "Environment: ${{ steps.publish.outputs.environment }}"
+          echo "Alias: ${{ steps.publish.outputs.alias }}"
