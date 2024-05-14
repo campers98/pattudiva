@@ -59,4 +59,4 @@ cloudscraper
 pycryptodome
 opencv-python
 pymongo
-yaml
+pyyaml==6.0.1
