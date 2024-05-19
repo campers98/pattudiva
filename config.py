@@ -10,15 +10,15 @@ load_dotenv()
 API_ID = int(getenv("API_ID", 24086498))
 API_HASH = getenv("API_HASH", "0c459b186767a4634604c740c001c0c3")
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("6066551482:AAFGSZt2moW7SpyFzVihoffOFKUSMpWGojQ")
+BOT_TOKEN = getenv("6066551482:AAH9CHuxNWc0qihY6qOfzIkmep6XdeD_SeE")
 # Add Owner Username without @ 
-OWNER_USERNAME = getenv("OWNER_USERNAME","Testingssz")
+OWNER_USERNAME = getenv("OWNER_USERNAME","Songjoker1")
 # Get Your bot username
 BOT_USERNAME = getenv("BOT_USERNAME" , "@SvD_chatfight_bot")
 # Don't Add style font 
 BOT_NAME = getenv("BOT_NAME" , "SVDchatBot")
 #get Your Assistant User name
-ASSUSERNAME = getenv("ASSUSERNAME" , "Testingssz")
+ASSUSERNAME = getenv("ASSUSERNAME" , "Songjoker1")
 EVALOP = list(map(int, getenv("EVALOP", "5259884546").split()))
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb://clve73lfu001ha4me1al6gw90:UTfT7DjJGjwyvbdXaM1hDrVj@104.251.218.202:9013/?readPreference=primary&ssl=false")
